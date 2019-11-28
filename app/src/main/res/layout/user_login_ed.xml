@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="85pt"
+            android:background="@drawable/bottom_bg">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/top_search_icon" />
+        <ImageView
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:scaleType="fitXY"
+
+                android:layout_gravity="center"
+                android:src="@drawable/top_search_icon" />
+
+        <TextView
+                android:id="@+id/fukang_me_login_displayname"
+                android:layout_width="wrap_content"
+                android:layout_height="10pt"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="center"
+                android:text="你好，"
+                android:textColor="#FFFFFF"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <LinearLayout
+            android:layout_marginTop="2pt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="FukangMeLogOut"
+                android:background="@drawable/top_search_icon"
+                android:text="退出登录-->"
+                android:layout_marginBottom="2pt"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="toUserInfoShow"
+                android:background="@drawable/top_search_icon"
+                android:text="我的信息-->"
+                android:layout_marginBottom="2pt"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="WatchWeather"
+                android:background="@drawable/top_search_icon"
+                android:text="今日天气-->"
+                android:layout_marginBottom="2pt"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="FukangLoginMyOrder"
+                android:background="@drawable/top_search_icon"
+                android:text="我的订单-->"
+                android:layout_marginBottom="2pt"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="FukangLoginMyFooter"
+                android:background="@drawable/top_search_icon"
+                android:text="我的足迹-->"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0sp"
+            android:layout_weight="1"></LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:background="#E8E8D0">
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/top_search_icon"
+                android:onClick="dzp_buttom_melogin_Mainactivity"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/top_search_icon"
+                android:onClick="dzp_button_melogin_Weather"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/top_search_icon"
+                android:onClick="dzp_buttom_melogin_Caractivity"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/top_search_icon"
+                android:onClick="dzp_button_melogin_MeNotLogin"
+                android:layout_weight="0.25" />
+    </LinearLayout>
+</LinearLayout>
