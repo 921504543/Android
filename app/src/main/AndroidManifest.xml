@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".view.test">
+
+        </activity>
+        <activity android:name=".view.UserInfoShow"></activity>
+        <activity android:name=".view.UserInfoChange"></activity>
         <activity android:name=".view.UserNotLogin"></activity>
-        <activity android:name=".view.UserLogin"></activity>
+        <activity android:name=".view.UserLogging"></activity>
         <activity android:name=".view.UserSignUp"></activity>
         <activity android:name=".view.UserLogged"></activity>
 

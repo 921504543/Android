@@ -17,4 +17,7 @@ public class UserLogged extends AppCompatActivity {
         Intent intent=new Intent(this,UserInfoShow.class);
         startActivity(intent);
     }
+    public void backIntoLogging(View view ){
+        Intent intent =new Intent(this,UserNotLogin.class);
+    }
 }

@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="goods.db" uuid="6fcd90be-0071-4639-b906-3ae1d04bc87b">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/DataBase/goods.db</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="goodsrecently.db" uuid="4bc7cb5f-67af-4d50-bec7-31f76f4da7a7">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
@@ -30,6 +24,19 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/DataBase/userInfo.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="goods.db" uuid="1f1f5440-d4b8-4efd-b13c-8669795c4109">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/DataBase/goods.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Shop.db" uuid="960ffffe-d961-4a89-b21f-e9087b626199">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>real db！！！！</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/data/cn.edu.sdufe.sn20170667208/databases/Shop.db</jdbc-url>
     </data-source>
   </component>
 </project>

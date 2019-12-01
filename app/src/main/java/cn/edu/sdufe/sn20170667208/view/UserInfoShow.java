@@ -17,4 +17,8 @@ public class UserInfoShow extends AppCompatActivity {
         Intent intent=new Intent(this,UserInfoChange.class);
         startActivity(intent);
     }
+    public void toUserLogged(View view){
+        Intent intent =new Intent(this,UserLogged.class);
+        startActivity(intent);
+    }
 }

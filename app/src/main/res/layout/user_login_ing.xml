@@ -9,7 +9,7 @@
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="90pt"
-                android:src="@drawable/fk_signup_top_picture"
+                android:src="@drawable/signup_top_picture"
                 android:scaleType="fitXY"/>
     </FrameLayout>
     <TableLayout
@@ -20,7 +20,7 @@
         <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fk_shape_top_corner_no_bottom_line"
+                android:background="@drawable/shape_top_corner_no_bottom_line"
                 android:padding="10dip">
 
             <TextView
@@ -31,7 +31,7 @@
                     android:text="用户名："></TextView>
 
             <EditText
-                    android:id="@+id/fukang_me_signup_username"
+                    android:id="@+id/login_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -43,7 +43,7 @@
         <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fk_shape_bottom_corner_no_top_lin"
+                android:background="@drawable/shape_bottom_corner_no_top_lin"
                 android:padding="10dip">
 
             <TextView
@@ -54,7 +54,7 @@
                     android:text="密码："></TextView>
 
             <EditText
-                    android:id="@+id/fukang_me_signup_password"
+                    android:id="@+id/login_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -72,8 +72,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="登录"
-                android:onClick="FukangMeSignup"
-                android:background="@drawable/fk_button_layout_1"
+                android:onClick="toUserLogged"
+                android:background="@drawable/button_layout_1"
                 android:layout_gravity="center"/>
         <Button
                 android:layout_marginLeft="5pt"
@@ -81,12 +81,12 @@
                 android:layout_height="wrap_content"
                 android:text="返回"
                 android:onClick="returnToNotLogin"
-                android:background="@drawable/fk_button_layout_1"
+                android:background="@drawable/button_layout_1"
                 android:layout_gravity="center"/>
 
     </LinearLayout>
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fukang_me_signup_info"/>
+            android:id="@+id/signup_info"/>
 </LinearLayout>

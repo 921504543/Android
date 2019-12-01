@@ -11,14 +11,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="fitXY"
-                android:src="@drawable/fk_login" />
+                android:src="@drawable/login" />
         <ImageView
                 android:layout_width="40pt"
                 android:layout_height="40pt"
                 android:scaleType="fitXY"
 
                 android:layout_gravity="center"
-                android:src="@drawable/fk_user_photo" />
+                android:src="@drawable/user_photo" />
         <TextView
                 android:layout_width="60pt"
                 android:layout_height="10pt"
@@ -37,22 +37,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
         <Button
-                android:onClick="toUserLogin"
+                android:onClick="toUserLogging"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fk_button_layout_1"
+                android:background="@drawable/button_layout_1"
                 android:text="登录"/>
         <Button
                 android:onClick="toUserSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fk_button_layout_1"
+                android:background="@drawable/button_layout_1"
                 android:text="注册"/>
 <!--        <Button-->
-<!--                android:onClick="FukangMeNotLoginTest"-->
+<!--                android:onClick="NotLoginTest"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/fk_button_layout_1"-->
+<!--                android:background="@drawable/button_layout_1"-->
 <!--                android:text="test"/>-->
     </LinearLayout>
     <LinearLayout
@@ -69,25 +69,25 @@
 <!--                android:layout_width="45dp"-->
 <!--                android:layout_height="54dp"-->
 <!--                android:src="@drawable/main"-->
-<!--                android:onClick="dzp_buttom_menotlogin_Mainactivity"-->
+<!--                android:onClick="buttom_menotlogin_Mainactivity"-->
 <!--                android:layout_weight="0.25" />-->
 <!--        <ImageView-->
 <!--                android:layout_width="45dp"-->
 <!--                android:layout_height="54dp"-->
 <!--                android:src="@drawable/product"-->
-<!--                android:onClick="dzp_button_menotlogin_Weather"-->
+<!--                android:onClick="button_menotlogin_Weather"-->
 <!--                android:layout_weight="0.25" />-->
 <!--        <ImageView-->
 <!--                android:layout_width="45dp"-->
 <!--                android:layout_height="54dp"-->
 <!--                android:src="@drawable/buycar"-->
-<!--                android:onClick="dzp_buttom_menotlogin_Caractivity"-->
+<!--                android:onClick="buttom_menotlogin_Caractivity"-->
 <!--                android:layout_weight="0.25" />-->
 <!--        <ImageView-->
 <!--                android:layout_width="45dp"-->
 <!--                android:layout_height="54dp"-->
 <!--                android:src="@drawable/me"-->
-<!--                android:onClick="dzp_button_menotlogin_MeNotLogin"-->
+<!--                android:onClick="button_menotlogin_MeNotLogin"-->
 <!--                android:layout_weight="0.25" />-->
     </LinearLayout>
 </LinearLayout>

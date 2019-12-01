@@ -13,8 +13,8 @@ public class UserNotLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_not_login);
     }
-    public void toUserLogin(View view){
-        Intent intent=new Intent(this,UserLogin.class);
+    public void toUserLogging(View view){
+        Intent intent=new Intent(this, UserLogging.class);
         startActivity(intent);
     }
     public void toUserSignUp(View view){

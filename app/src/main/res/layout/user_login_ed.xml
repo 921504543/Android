@@ -22,7 +22,7 @@
                 android:src="@drawable/top_search_icon" />
 
         <TextView
-                android:id="@+id/fukang_me_login_displayname"
+                android:id="@+id/login_displayname"
                 android:layout_width="wrap_content"
                 android:layout_height="10pt"
                 android:layout_gravity="bottom|center_horizontal"
@@ -42,7 +42,7 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="FukangMeLogOut"
+                android:onClick="backIntoLogging"
                 android:background="@drawable/top_search_icon"
                 android:text="退出登录-->"
                 android:layout_marginBottom="2pt"/>
@@ -56,21 +56,21 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="WatchWeather"
+                android:onClick="todayWeather"
                 android:background="@drawable/top_search_icon"
                 android:text="今日天气-->"
                 android:layout_marginBottom="2pt"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="FukangLoginMyOrder"
+                android:onClick="toMyOrder"
                 android:background="@drawable/top_search_icon"
                 android:text="我的订单-->"
                 android:layout_marginBottom="2pt"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="FukangLoginMyFooter"
+                android:onClick="toMyFooter"
                 android:background="@drawable/top_search_icon"
                 android:text="我的足迹-->"/>
     </LinearLayout>
