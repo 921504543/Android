@@ -36,9 +36,9 @@ public class UserLogging extends AppCompatActivity {
         }else {
             //从数据库中按照username 查出password
             try{
-//                Cursor cursor=database.query("user",new String[]{"username","password"},"username=?",new String[]{username},null,null,null);//
+                Cursor cursor=database.query("user",new String[]{"username","password"},"username=?",new String[]{username},null,null,null);//
 //                database.execSQL("update user set username='fss' where id = 1");
-                Cursor cursor=database.rawQuery("select * from user ",null);
+//                Cursor cursor=database.rawQuery("select * from user ",null);
                 Log.i("count", String.valueOf(cursor.getCount()));
                 while(cursor.moveToNext()){
                     int index0=cursor.getColumnIndex("username");

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
@@ -20,10 +21,14 @@ public class UserInfoShow extends AppCompatActivity {
     private TextView Info_age;
     private TextView Info_phonenumber;
     private TextView Info_address;
+    String loggingName;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_show);
+        Intent intent1=getIntent();
+        loggingName=intent1.getStringExtra("transform_username");
+        System.out.println("ShowUserInfologgingName:" +intent1+"aaaa:"+intent1.getStringExtra("username"));
         Info_username=(TextView) findViewById(R.id.info_username);
         Info_password=(TextView) findViewById(R.id.info_password);
         Info_sex=(TextView) findViewById(R.id.info_sex);
@@ -32,10 +37,12 @@ public class UserInfoShow extends AppCompatActivity {
         Info_address=(TextView) findViewById(R.id.info_address);
         MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
         SQLiteDatabase sqLiteDatabase=myDBHelper.getReadableDatabase();
+
+//        Log.i("ShowUserInfologgingName",loggingName);
         try{
 
-            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},null,null,null,null,null);
-
+            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},"username=?",new String[]{loggingName},null,null,null);
+            Log.i("cusor Count", String.valueOf(cursor.getCount()));
             while(cursor.moveToNext()){
                 int index0=cursor.getColumnIndex("username");
                 String Info_cursor_username=cursor.getString(index0);
@@ -65,10 +72,12 @@ public class UserInfoShow extends AppCompatActivity {
 
     public void toUserInfoChange(View view){
         Intent intent=new Intent(this,UserInfoChange.class);
+        intent.putExtra("transform_username",loggingName);
         startActivity(intent);
     }
     public void toUserLogged(View view){
         Intent intent =new Intent(this,UserLogged.class);
+        intent.putExtra("transform_username",loggingName);
         startActivity(intent);
     }
 }

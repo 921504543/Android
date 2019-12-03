@@ -26,10 +26,13 @@ public class UserInfoChange extends AppCompatActivity {
     private RadioButton female;
     private RadioGroup sex_group;
     private String SexName;
+    String loggingName;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_change);
+        Intent intent=getIntent();
+        loggingName=intent.getStringExtra("transform_username");
         username=(EditText) findViewById(R.id.change_info_username);
         password=(EditText) findViewById(R.id.change_info_password);
         age=(EditText) findViewById(R.id.change_info_age);
@@ -42,7 +45,7 @@ public class UserInfoChange extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase=myDBHelper.getReadableDatabase();
         try{
 
-            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},null,null,null,null,null);
+            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},"username=?",new String[]{loggingName},null,null,null);
 
             while(cursor.moveToNext()){
                 int index0=cursor.getColumnIndex("username");
@@ -103,10 +106,12 @@ public class UserInfoChange extends AppCompatActivity {
         output.setText("修改信息成功！");
 
         Intent intent=new Intent(this,UserInfoShow.class);
+        intent.putExtra("transform_username",loggingName);
         startActivity(intent);
     }
     public void toUserInfoShow(View view){
         Intent intent=new Intent(this,UserInfoShow.class);
+        intent.putExtra("transform_username",loggingName);
         startActivity(intent);
     }
 }
