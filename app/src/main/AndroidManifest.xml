@@ -3,6 +3,7 @@
           package="cn.edu.sdufe.sn20170667208">
 
     <application
+
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -10,14 +11,14 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".view.MainActivity">
-
-        </activity>
-        <activity android:name=".view.test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".view.test">
+
         </activity>
         <activity android:name=".view.UserInfoShow"></activity>
         <activity android:name=".view.UserInfoChange"></activity>
