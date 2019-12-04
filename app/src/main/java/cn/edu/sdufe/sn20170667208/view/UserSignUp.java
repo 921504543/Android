@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import com.xuexiang.xui.XUI;
 
 public class UserSignUp extends AppCompatActivity {
     private EditText username;
@@ -28,6 +29,7 @@ public class UserSignUp extends AppCompatActivity {
     private TextView info;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
+        XUI.initTheme(this);//调整应用的基础主题
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_sign_up);
         username=(EditText) findViewById(R.id.registe_username);

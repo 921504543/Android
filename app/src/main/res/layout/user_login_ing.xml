@@ -1,90 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical" tools:ignore="MissingDefaultResource">
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="90pt"
-                android:src="@drawable/bottom_bg"
-                android:scaleType="fitXY"/>
-    </FrameLayout>
-    <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dip">
-        <!-- 表格布局：第一行 -->
-        <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shape_top_corner_no_bottom_line"
-                android:padding="10dip">
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              tools:ignore="MissingDefaultResource"
+              android:orientation="vertical">
+<!--    <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="90pt"-->
+<!--                android:src="@drawable/bottom_bg"-->
+<!--                android:scaleType="fitXY"/>-->
+<!--    </FrameLayout>-->
+<!--    <TableLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="10dip">-->
+<!--        &lt;!&ndash; 表格布局：第一行 &ndash;&gt;-->
+<!--        <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/shape_top_corner_no_bottom_line"-->
+<!--                android:padding="10dip">-->
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dip"
-                    android:text="用户名："></TextView>
+<!--            <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_marginRight="10dip"-->
+<!--                    android:text="用户名："></TextView>-->
 
-            <EditText
-                    android:id="@+id/login_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:hint="请输入用户名"></EditText>
-        </TableRow>
+<!--            <EditText-->
+<!--                    android:id="@+id/login_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@null"-->
+<!--                    android:hint="请输入用户名"></EditText>-->
+<!--        </TableRow>-->
 
-        <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shape_bottom_corner_no_top_lin"
-                android:padding="10dip">
+<!--        <TableRow-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/shape_bottom_corner_no_top_lin"-->
+<!--                android:padding="10dip">-->
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dip"
-                    android:text="密码："></TextView>
+<!--            <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_marginRight="10dip"-->
+<!--                    android:text="密码："></TextView>-->
 
-            <EditText
-                    android:id="@+id/login_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:hint="请输入密码"
-                    android:inputType="phone"></EditText>
-        </TableRow>
-    </TableLayout>
+<!--            <EditText-->
+<!--                    android:id="@+id/login_password"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@null"-->
+<!--                    android:hint="请输入密码"-->
+<!--                    android:inputType="phone"></EditText>-->
+<!--        </TableRow>-->
+<!--    </TableLayout>-->
+<!--    <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        <Button-->
+<!--                android:layout_marginLeft="40pt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="登录"-->
+<!--                android:onClick="toUserLogged"-->
+<!--                android:background="@drawable/button_layout_1"-->
+<!--                android:layout_gravity="center"/>-->
+<!--        <Button-->
+<!--                android:layout_marginLeft="5pt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="返回"-->
+<!--                android:onClick="returnToNotLogin"-->
+<!--                android:background="@drawable/button_layout_1"-->
+<!--                android:layout_gravity="center"/>-->
+
+<!--    </LinearLayout>-->
+
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <Button
-                android:layout_marginLeft="40pt"
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+        <com.xuexiang.xui.widget.edittext.ClearEditText
+                android:id="@+id/login_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="登录"
-                android:onClick="toUserLogged"
-                android:background="@drawable/button_layout_1"
-                android:layout_gravity="center"/>
-        <Button
-                android:layout_marginLeft="5pt"
-                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dip"
+                android:textSize="20sp"
+                android:hint="用户名"/>
+        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="返回"
-                android:onClick="returnToNotLogin"
-                android:background="@drawable/button_layout_1"
-                android:layout_gravity="center"/>
+                android:paddingLeft="9dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dip"
+                android:hint="密码"
+                android:textSize="20sp"
+                android:inputType="textPassword"
 
+                app:met_passWordButton="true"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <com.xuexiang.xui.widget.button.ButtonView
+                    style="@style/ButtonView.Gray"
+                    android:layout_margin="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:text="返回"
+                    android:onClick="returnToNotLogin"
+
+                    android:layout_gravity="center"/>
+            <com.xuexiang.xui.widget.button.ButtonView
+                    style="@style/ButtonView.Green"
+                    android:text="登录"
+                    android:onClick="toUserLogged"
+                    android:layout_margin="20dp"
+                    android:layout_marginLeft="5pt"/>
+
+
+        </LinearLayout>
     </LinearLayout>
+
+
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

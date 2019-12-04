@@ -12,25 +12,31 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.xuexiang.xui.XUI;
+import com.xuexiang.xui.widget.edittext.ClearEditText;
+import com.xuexiang.xui.widget.edittext.PasswordEditText;
+import com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText;
 
 public class UserLogging extends AppCompatActivity {
-    EditText loginName;
-    EditText loginPassword;
+    ClearEditText loginName;
+    MaterialEditText loginPassword;
     String loginName_db;
     String loginPassword_db;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        XUI.initTheme(this);//调整应用的基础主题
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login_ing);
-        loginName= (EditText) findViewById(R.id.login_name);
-        loginPassword=(EditText)findViewById(R.id.login_password);
+        loginName= (ClearEditText) findViewById(R.id.login_name);
+        loginPassword=(MaterialEditText)findViewById(R.id.login_password);
     }
-    public void toUserLogged(View view){
-        String username=loginName.getText().toString();
-        String password=loginPassword.getText().toString();
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase database=myDBHelper.getReadableDatabase();
-        Log.i("usernameAndPassword","----->username:"+username+"----password:"+password);
+    public void toUserLogged(View view) {
+        String username = loginName.getText().toString();
+        String password = loginPassword.getText().toString();
+        MyDBHelper myDBHelper = new MyDBHelper(this, "Shop.db", null, 1);
+        SQLiteDatabase database = myDBHelper.getReadableDatabase();
+        Log.i("usernameAndPassword", "----->username:" + username + "----password:" + password);
         if (username.equals("")||password.equals("")){
             Toast.makeText(UserLogging.this,"用户名或密码不能为空", Toast.LENGTH_SHORT).show();
         }else {

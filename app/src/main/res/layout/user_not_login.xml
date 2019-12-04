@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical" tools:ignore="MissingDefaultResource">
 
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="85pt">
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@drawable/bottom_bg" />
-        <ImageView
-                android:layout_width="40pt"
-                android:layout_height="40pt"
-                android:scaleType="fitXY"
 
-                android:layout_gravity="center"
-                android:src="@drawable/bottom_bg" />
-        <TextView
-                android:layout_width="60pt"
-                android:layout_height="10pt"
-                android:textSize="10pt"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:layout_gravity="bottom|center_horizontal"
-                android:text="未登录" />
-
-    </FrameLayout>
 
     <LinearLayout
             android:layout_marginTop="1pt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <Button
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+
+    >
+        <TextView
+                android:layout_width="60pt"
+                android:layout_height="wrap_content"
+                android:textColor="#9F79EE"
+                android:gravity="center"
+                android:textSize="27dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="未登录" />
+        <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+                style="@style/RoundButton.Auto"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:onClick="toUserLogging"
-                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_layout_1"
-                android:text="登录"/>
-        <Button
+                android:layout_width="250dp"
+                android:textSize="25dp"
+                android:text="登录"
+                app:rb_isRadiusAdjustBounds="true" />
+        <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+                style="@style/RoundButton.Auto"
                 android:onClick="toUserSignUp"
-                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_layout_1"
-                android:text="注册"/>
+                android:layout_width="250dp"
+                android:textSize="25dp"
+                android:text="注册"
+                app:rb_isRadiusAdjustBounds="true" />
 <!--        <Button-->
 <!--                android:onClick="NotLoginTest"-->
 <!--                android:layout_width="match_parent"-->

@@ -1,78 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical" tools:ignore="MissingDefaultResource">
-    <FrameLayout
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="85pt"
-            android:background="@drawable/bottom_bg">
-
-        <ImageView
-                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+    >
+        <com.xuexiang.xui.widget.imageview.RadiusImageView
+                android:clickable="true"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@drawable/top_search_icon" />
-        <ImageView
-                android:layout_width="40pt"
-                android:layout_height="40pt"
-                android:scaleType="fitXY"
-
+                android:src="@drawable/user"
+                app:riv_border_color="@color/xui_config_color_gray_6"
+                app:riv_border_width="1px"
+                app:riv_is_circle="true"
+                app:riv_selected_border_color="@color/xui_config_color_gray_4"
+                app:riv_selected_border_width="1px"
+                app:riv_selected_mask_color="@color/xui_config_color_gray_8"
                 android:layout_gravity="center"
-                android:src="@drawable/top_search_icon" />
-
-        <TextView
+        />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                 android:id="@+id/login_display_name"
-                android:layout_width="wrap_content"
-                android:layout_height="10pt"
-                android:layout_gravity="bottom|center_horizontal"
-                android:gravity="center"
-                android:text="你好，"
-                android:textColor="#FFFFFF"
-                android:textSize="10pt"
-                android:textStyle="bold" />
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text=""
+                app:sDividerLineType="both"
+                app:sLeftTextString="意见反馈"
+                app:sRightTextString=">"
 
-    </FrameLayout>
+        />
+
+        <!--        <TextView-->
+        <!--                android:id="@+id/login_display_name"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="10pt"-->
+        <!--                android:layout_gravity="bottom|center_horizontal"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="你好，"-->
+        <!--                android:textColor="#FFFFFF"-->
+        <!--                android:textSize="10pt"-->
+        <!--                android:textStyle="bold" />-->
+
+    </LinearLayout>
 
     <LinearLayout
             android:layout_marginTop="2pt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="backIntoLogging"
-                android:background="@drawable/top_search_icon"
-                android:text="退出登录-->"
-                android:layout_marginBottom="2pt"/>
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                 android:onClick="toUserInfoShow"
-                android:background="@drawable/top_search_icon"
-                android:text="我的信息-->"
-                android:layout_marginBottom="2pt"/>
-        <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="todayWeather"
-                android:background="@drawable/top_search_icon"
-                android:text="今日天气-->"
-                android:layout_marginBottom="2pt"/>
-        <Button
+                android:layout_height="50dp"
+
+                app:sDividerLineType="both"
+                app:sLeftTextString="我的信息"
+                app:sRightTextString=">"
+        />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="toMyOrder"
-                android:background="@drawable/top_search_icon"
-                android:text="我的订单-->"
-                android:layout_marginBottom="2pt"/>
-        <Button
+                android:layout_height="50dp"
+
+                app:sDividerLineType="both"
+                app:sLeftTextString="今日天气"
+                app:sRightTextString=">"
+        />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="toMyFooter"
-                android:background="@drawable/top_search_icon"
-                android:text="我的足迹-->"/>
+                android:layout_height="50dp"
+
+                app:sDividerLineType="both"
+                app:sLeftTextString="我的订单"
+                app:sRightTextString=">"
+        />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                app:sDividerLineType="both"
+                app:sLeftTextString="我的足迹"
+                app:sRightTextString=">"
+        />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:layout_width="match_parent"
+            android:onClick="backIntoLogging"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            app:sDividerLineType="both"
+            app:sLeftTextString="退出登录"
+            app:sRightTextString=">"
+    />
+<!--        <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="backIntoLogging"-->
+<!--                android:background="@drawable/top_search_icon"-->
+<!--                android:text="退出登录&ndash;&gt;"-->
+<!--                android:layout_marginBottom="2pt"/>-->
+<!--        <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="toUserInfoShow"-->
+<!--                android:background="@drawable/top_search_icon"-->
+<!--                android:text="我的信息&ndash;&gt;"-->
+<!--                android:layout_marginBottom="2pt"/>-->
+<!--        <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="todayWeather"-->
+<!--                android:background="@drawable/top_search_icon"-->
+<!--                android:text="今日天气&ndash;&gt;"-->
+<!--                android:layout_marginBottom="2pt"/>-->
+<!--        <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="toMyOrder"-->
+<!--                android:background="@drawable/top_search_icon"-->
+<!--                android:text="我的订单&ndash;&gt;"-->
+<!--                android:layout_marginBottom="2pt"/>-->
+<!--        <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="toMyFooter"-->
+<!--                android:background="@drawable/top_search_icon"-->
+<!--                android:text="我的足迹&ndash;&gt;"/>-->
     </LinearLayout>
     <LinearLayout
             android:layout_width="wrap_content"
@@ -83,29 +136,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="1"
-            android:background="#E8E8D0">
+            >
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
-                android:src="@drawable/top_search_icon"
+                android:src="@drawable/home"
                 android:onClick="dzp_buttom_melogin_Mainactivity"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
-                android:src="@drawable/top_search_icon"
+                android:src="@drawable/add_cart"
                 android:onClick="dzp_button_melogin_Weather"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
-                android:src="@drawable/top_search_icon"
+                android:src="@drawable/cart_empty"
                 android:onClick="dzp_buttom_melogin_Caractivity"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
-                android:src="@drawable/top_search_icon"
+                android:src="@drawable/account"
                 android:onClick="dzp_button_melogin_MeNotLogin"
                 android:layout_weight="0.25" />
     </LinearLayout>

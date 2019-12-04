@@ -154,19 +154,32 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <Button
-                android:layout_marginLeft="30dp"
+<!--        <Button-->
+
+
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="返回" />-->
+<!--        <Button-->
+
+
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="修改个人信息" />-->
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Gray"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="返回"
                 android:onClick="toUserLogged"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="返回" />
-        <Button
-                android:layout_marginLeft="120dp"
+                android:layout_gravity="center"/>
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Blue"
+                android:text="修改个人信息"
                 android:onClick="toUserInfoChange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="修改个人信息" />
+                android:layout_margin="20dp"
+                android:layout_marginLeft="5pt"/>
     </LinearLayout>
 </LinearLayout>

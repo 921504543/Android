@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import com.xuexiang.xui.XUI;
 
 public class UserInfoChange extends AppCompatActivity {
     private EditText username;
@@ -29,6 +30,7 @@ public class UserInfoChange extends AppCompatActivity {
     String loggingName;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
+        XUI.initTheme(this);//调整应用的基础主题
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_change);
         Intent intent=getIntent();

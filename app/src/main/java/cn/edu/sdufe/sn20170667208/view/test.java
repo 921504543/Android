@@ -10,10 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
 import cn.edu.sdufe.sn20170667208.dao.UserDao;
-
+import com.xuexiang.xui.XUI;
 public class test extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState) {
+        XUI.initTheme(this);//调整应用的基础主题
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
     }
