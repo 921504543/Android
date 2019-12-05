@@ -166,21 +166,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="toUserInfoShow"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30pt"
-                android:text="返回" />
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Gray"
+                android:onClick="toUserInfoShow"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="返回"
+                android:layout_gravity="center"/>
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Blue"
+                android:text="提交"
                 android:onClick="changUserInfo"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30pt"
-                android:text="提交" />
+                android:layout_margin="20dp"
+                android:layout_marginLeft="5pt"/>
     </LinearLayout>
     <TextView
             android:id="@+id/change_info_output"
