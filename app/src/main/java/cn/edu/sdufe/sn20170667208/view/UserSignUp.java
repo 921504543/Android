@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import cn.edu.sdufe.sn20170667208.dao.UserDao;
+import cn.edu.sdufe.sn20170667208.entity.User;
 import com.xuexiang.xui.XUI;
 
 public class UserSignUp extends AppCompatActivity {
@@ -54,32 +56,18 @@ public class UserSignUp extends AppCompatActivity {
         info=(TextView)findViewById(R.id.registe_info);
     }
     public void RegisterSubmit (View view){
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase sqLiteDatabase=myDBHelper.getWritableDatabase();
-        sqLiteDatabase.beginTransaction();
+//        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
+        UserDao userDao=new UserDao(this,"Shop.db",null,1);
+        User user =new User();
         String username_add=username.getText().toString();
         if(password.getText().toString().equals(password_confrim.getText().toString())) {
-            String password_add = password.getText().toString();
-            String age_add=age.getText().toString();
-            String phone_number_add=phone_number.getText().toString();
-            String address_add=address.getText().toString();
-            String SexName_add=SexName;
-            try {
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("username", username_add);
-                contentValues.put("password", password_add);
-                contentValues.put("age", age_add);
-                contentValues.put("sex", SexName_add);
-                contentValues.put("phonenumber", phone_number_add);
-                contentValues.put("address", address_add);
-                sqLiteDatabase.insert("user", "", contentValues);
-                sqLiteDatabase.setTransactionSuccessful();
-            }catch (Exception e){
-
-            }finally {
-                sqLiteDatabase.endTransaction();
-                sqLiteDatabase.close();
-            }
+            user.setName(username_add);
+            user.setPassword(password.getText().toString());
+            user.setAge(age.getText().toString());
+            user.setTelphone(phone_number.getText().toString());
+            user.setAddress(address.getText().toString());
+            user.setSex(SexName);
+            userDao.create(user);
             info.setText("恭喜您，注册成功！");
             Intent intent=new Intent(this,UserNotLogin.class);
             startActivity(intent);

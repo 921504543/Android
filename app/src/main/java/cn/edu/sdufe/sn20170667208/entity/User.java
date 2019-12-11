@@ -7,7 +7,15 @@ public class User {
     private String age;
     private String sex;
     private String address;
-
+    public User(String name, String password,String telphone, String age,String sex,String address){
+        this.name=name;
+        this.password=password;
+        this.telphone=telphone;
+        this.age=age;
+        this.sex=sex;
+        this.address=address;
+    }
+    public User(){}
     public String getName() {
         return name;
     }

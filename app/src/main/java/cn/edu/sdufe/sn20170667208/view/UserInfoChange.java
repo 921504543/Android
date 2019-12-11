@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import cn.edu.sdufe.sn20170667208.dao.UserDao;
+import cn.edu.sdufe.sn20170667208.entity.User;
 import com.xuexiang.xui.XUI;
 
 public class UserInfoChange extends AppCompatActivity {
@@ -43,37 +45,16 @@ public class UserInfoChange extends AppCompatActivity {
         male=(RadioButton) findViewById(R.id.change_info_male);
         female=(RadioButton) findViewById(R.id.change_info_female);
         sex_group=(RadioGroup)findViewById(R.id.change_info_sex_group);
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase sqLiteDatabase=myDBHelper.getReadableDatabase();
-        try{
-
-            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},"username=?",new String[]{loggingName},null,null,null);
-
-            while(cursor.moveToNext()){
-                int index0=cursor.getColumnIndex("username");
-                String Info_cursor_username=cursor.getString(index0);
-                int index=cursor.getColumnIndex("password");
-                String Info_cursor_password=cursor.getString(index);
-                int index1=cursor.getColumnIndex("sex");
-                String Info_cursor_sex=cursor.getString(index1);
-                int index2=cursor.getColumnIndex("age");
-                String Info_cursor_age=cursor.getString(index2);
-                int index3=cursor.getColumnIndex("phonenumber");
-                String Info_cursor_phonenumber=cursor.getString(index3);
-                int index4=cursor.getColumnIndex("address");
-                String Info_cursor_address=cursor.getString(index4);
-                username.setText(Info_cursor_username);
-                password.setText(Info_cursor_password);
+        User user=new User();
+        UserDao userDao=new UserDao(this,"Shop.db",null,1);
+//        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
+        userDao.select(user,loggingName);
+        username.setText(user.getName());
+        password.setText(user.getPassword());
 //                Info_sex.setText(Info_cursor_sex);
-                age.setText(Info_cursor_age);
-                phonenumber.setText(Info_cursor_phonenumber);
-                address.setText(Info_cursor_address);
-            }
-            cursor.close();
-        }catch(Exception e){
-        }finally{
-            sqLiteDatabase.close();
-        }
+        age.setText(user.getAge());
+        phonenumber.setText(user.getTelphone());
+        address.setText(user.getAddress());
         sex_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -87,26 +68,17 @@ public class UserInfoChange extends AppCompatActivity {
     }
     public void changUserInfo(View view){
         TextView output=(TextView) findViewById(R.id.change_info_output);
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase sqLiteDatabase=myDBHelper.getWritableDatabase();
-        sqLiteDatabase.beginTransaction();
-        try{
-            ContentValues contentValues=new ContentValues();
-            contentValues.put("password",password.getText().toString());
-            contentValues.put("age",age.getText().toString());
-            contentValues.put("phonenumber",phonenumber.getText().toString());
-            contentValues.put("address",address.getText().toString());
-            contentValues.put("sex",SexName);
-            sqLiteDatabase.update("user",contentValues,"username=?",new String[]{username.getText().toString()});
-            sqLiteDatabase.setTransactionSuccessful();
-        }catch(Exception e){
-
-        }finally {
-            sqLiteDatabase.endTransaction();
-            sqLiteDatabase.close();
-        }
+        UserDao userDao=new UserDao(this,"Shop.db",null,1);
+        User user=new User();
+//        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
+        user.setName(username.getText().toString());
+        user.setPassword(password.getText().toString());
+        user.setAge(age.getText().toString());
+        user.setAddress(address.getText().toString());
+        user.setTelphone(phonenumber.getText().toString());
+        user.setSex(SexName);
+        int count=userDao.update(user);
         output.setText("修改信息成功！");
-
         Intent intent=new Intent(this,UserInfoShow.class);
         intent.putExtra("transform_username",loggingName);
         startActivity(intent);

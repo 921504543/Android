@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import cn.edu.sdufe.sn20170667208.dao.UserDao;
+import cn.edu.sdufe.sn20170667208.entity.User;
 import com.xuexiang.xui.XUI;
 
 public class UserInfoShow extends AppCompatActivity {
@@ -37,39 +39,16 @@ public class UserInfoShow extends AppCompatActivity {
         Info_age=(TextView) findViewById(R.id.info_age);
         Info_phonenumber=(TextView) findViewById(R.id.info_phone_number);
         Info_address=(TextView) findViewById(R.id.info_address);
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase sqLiteDatabase=myDBHelper.getReadableDatabase();
-
-//        Log.i("ShowUserInfologgingName",loggingName);
-        try{
-
-            Cursor cursor=sqLiteDatabase.query("user",new String[]{"username","password","sex","age","phonenumber","address"},"username=?",new String[]{loggingName},null,null,null);
-            Log.i("cusor Count", String.valueOf(cursor.getCount()));
-            while(cursor.moveToNext()){
-                int index0=cursor.getColumnIndex("username");
-                String Info_cursor_username=cursor.getString(index0);
-                int index=cursor.getColumnIndex("password");
-                String Info_cursor_password=cursor.getString(index);
-                int index1=cursor.getColumnIndex("sex");
-                String Info_cursor_sex=cursor.getString(index1);
-                int index2=cursor.getColumnIndex("age");
-                String Info_cursor_age=cursor.getString(index2);
-                int index3=cursor.getColumnIndex("phonenumber");
-                String Info_cursor_phonenumber=cursor.getString(index3);
-                int index4=cursor.getColumnIndex("address");
-                String Info_cursor_address=cursor.getString(index4);
-                Info_username.setText(Info_cursor_username);
-                Info_password.setText(Info_cursor_password);
-                Info_sex.setText(Info_cursor_sex);
-                Info_age.setText(Info_cursor_age);
-                Info_phonenumber.setText(Info_cursor_phonenumber);
-                Info_address.setText(Info_cursor_address);
-            }
-            cursor.close();
-        }catch(Exception e){
-        }finally{
-            sqLiteDatabase.close();
-        }
+        User user=new User();
+        UserDao userDao=new UserDao(this,"Shop.db",null,1);
+//        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
+        userDao.select(user,loggingName);
+        Info_username.setText(user.getName());
+        Info_password.setText(user.getPassword());
+        Info_sex.setText(user.getSex());
+        Info_age.setText(user.getAge());
+        Info_phonenumber.setText(user.getTelphone());
+        Info_address.setText(user.getAddress());
     }
 
     public void toUserInfoChange(View view){
