@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cn.edu.sdufe.sn20170667208">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
             android:name=".MyApplication"
             android:allowBackup="true"
@@ -20,12 +20,15 @@
         <activity android:name=".view.test">
 
         </activity>
-        <activity android:name=".view.UserInfoShow"></activity>
-        <activity android:name=".view.UserInfoChange"></activity>
-        <activity android:name=".view.UserNotLogin"></activity>
-        <activity android:name=".view.UserLogging"></activity>
-        <activity android:name=".view.UserSignUp"></activity>
-        <activity android:name=".view.UserLogged"></activity>
+        <activity android:name=".view.GoodsList"/>
+        <activity android:name=".view.UserInfoShow"/>
+        <activity android:name=".view.UserInfoChange"/>
+        <activity android:name=".view.UserNotLogin"/>
+        <activity android:name=".view.UserLogging"/>
+        <activity android:name=".view.UserSignUp"/>
+        <activity android:name=".view.UserLogged"/>
+        <activity android:name=".view.GoodsDetail"/>
+        <activity android:name=".view.UserRecently"/>
 
     </application>
 

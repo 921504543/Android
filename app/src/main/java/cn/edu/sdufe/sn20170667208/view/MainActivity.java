@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
+import cn.edu.sdufe.sn20170667208.dao.GoodsDao;
 import com.xuexiang.xui.XUI;
 
 
@@ -33,5 +34,31 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase database=myDBHelper.getWritableDatabase();
         System.out.println("success create");
         database.close();
+    }
+    public void toGoodsFood(View view){
+        Intent intent=new Intent(MainActivity.this,GoodsList.class);
+        intent.putExtra("type","食品区");
+        startActivity(intent);
+    }
+    public void toGoodsDaily(View view){
+        Intent intent=new Intent(MainActivity.this,GoodsList.class);
+        intent.putExtra("type","日用品");
+        startActivity(intent);
+    }
+    public void toHome(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toCar(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toWeather(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toUser(View view){
+        Intent intent=new Intent(this,UserNotLogin.class);
+        startActivity(intent);
     }
 }

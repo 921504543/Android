@@ -43,6 +43,16 @@
                 android:textSize="25dp"
                 android:text="注册"
                 app:rb_isRadiusAdjustBounds="true" />
+        <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+                style="@style/RoundButton.Auto"
+                android:onClick="toUserLogged"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:text="游客登录"
+                app:rb_isRadiusAdjustBounds="true" />
 <!--        <Button-->
 <!--                android:onClick="NotLoginTest"-->
 <!--                android:layout_width="match_parent"-->
@@ -60,29 +70,6 @@
             android:orientation="horizontal"
             android:weightSum="1"
             android:background="#E8E8D0">
-<!--        <ImageView-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="54dp"-->
-<!--                android:src="@drawable/main"-->
-<!--                android:onClick="buttom_menotlogin_Mainactivity"-->
-<!--                android:layout_weight="0.25" />-->
-<!--        <ImageView-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="54dp"-->
-<!--                android:src="@drawable/product"-->
-<!--                android:onClick="button_menotlogin_Weather"-->
-<!--                android:layout_weight="0.25" />-->
-<!--        <ImageView-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="54dp"-->
-<!--                android:src="@drawable/buycar"-->
-<!--                android:onClick="buttom_menotlogin_Caractivity"-->
-<!--                android:layout_weight="0.25" />-->
-<!--        <ImageView-->
-<!--                android:layout_width="45dp"-->
-<!--                android:layout_height="54dp"-->
-<!--                android:src="@drawable/me"-->
-<!--                android:onClick="button_menotlogin_MeNotLogin"-->
-<!--                android:layout_weight="0.25" />-->
+
     </LinearLayout>
 </LinearLayout>

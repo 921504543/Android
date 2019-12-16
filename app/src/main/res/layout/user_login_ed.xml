@@ -78,7 +78,7 @@
         <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-
+                android:onClick="toRecently"
                 app:sDividerLineType="both"
                 app:sLeftTextString="我的足迹"
                 app:sRightTextString=">"
@@ -130,7 +130,7 @@
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0sp"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"/>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,25 +141,25 @@
                 android:layout_width="45dp"
                 android:layout_height="54dp"
                 android:src="@drawable/home"
-                android:onClick="dzp_buttom_melogin_Mainactivity"
+                android:onClick="toHome"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
                 android:src="@drawable/add_cart"
-                android:onClick="dzp_button_melogin_Weather"
+                android:onClick="toCar"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
                 android:src="@drawable/cart_empty"
-                android:onClick="dzp_buttom_melogin_Caractivity"
+                android:onClick="toWeather"
                 android:layout_weight="0.25" />
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
                 android:src="@drawable/account"
-                android:onClick="dzp_button_melogin_MeNotLogin"
+                android:onClick="toUser"
                 android:layout_weight="0.25" />
     </LinearLayout>
 </LinearLayout>

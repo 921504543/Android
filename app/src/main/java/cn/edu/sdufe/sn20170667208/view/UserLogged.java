@@ -22,7 +22,6 @@ public class UserLogged extends AppCompatActivity {
         loggingName=intent.getStringExtra("transform_username");
         System.out.println("Logged is："+loggingName);
         SuperTextView displayname=(SuperTextView)findViewById(R.id.login_display_name);
-
         displayname.setLeftString(loggingName);
     }
     public void toUserInfoShow(View view){
@@ -31,9 +30,29 @@ public class UserLogged extends AppCompatActivity {
         intent.putExtra("transform_username",loggingName);
         startActivity(intent);
     }
+    public void toRecently(View view){
+        Intent intent=new Intent(this,UserRecently.class);
+        startActivity(intent);
+    }
     public void backIntoLogging(View view ){
         Intent intent =new Intent(this,UserNotLogin.class);
         intent.putExtra("transform_username",loggingName);
+        startActivity(intent);
+    }
+    public void toHome(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toCar(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toWeather(View view){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public void toUser(View view){
+        Intent intent=new Intent(this,UserNotLogin.class);
         startActivity(intent);
     }
 }

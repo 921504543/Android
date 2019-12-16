@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ListView
+            android:id="@+id/recently_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0sp"
+            android:layout_weight="1"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+    >
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/home"
+                android:onClick="toHome"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/add_cart"
+                android:onClick="toCar"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/cart_empty"
+                android:onClick="toWeather"
+                android:layout_weight="0.25" />
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="54dp"
+                android:src="@drawable/account"
+                android:onClick="toUser"
+                android:layout_weight="0.25" />
+    </LinearLayout>
+</LinearLayout>

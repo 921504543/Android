@@ -1,61 +1,60 @@
 package cn.edu.sdufe.sn20170667208.view;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.DButil.MyDBHelper;
 import cn.edu.sdufe.sn20170667208.R;
 import cn.edu.sdufe.sn20170667208.dao.UserDao;
 import com.xuexiang.xui.XUI;
-public class test extends AppCompatActivity {
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class test extends Activity {
+
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
-        XUI.initTheme(this);//调整应用的基础主题
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-    }
-    public void test1(View view){
-        String loginName_db;
-        String loginPassword_db;
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase database=myDBHelper.getWritableDatabase();
-        try{
-            database.execSQL("insert into user(username ,password ,age ,sex ,phonenumber,address ) values('aa','123456','19','n','111','sdufe')");
-        }catch(Exception e){
-            Log.e("abcd",e.toString());
-        }finally{
-            database.close();
+        //　获取资源
+        ListView list1 = (ListView)findViewById(R.id.list_view);
+        //　构建Adapter
+        String[] arrayName = {"孙悟空","牛魔王","猪八戒","哪吒","江流儿"};
+        // 头像图标
+        int[] headerID = {R.drawable.home,R.drawable.home,R.drawable.home,R.drawable.home,R.drawable.home};
+
+        List<Map<String, Object>> listTest = new ArrayList<Map<String, Object>>();
+
+        for(int i = 0; i < arrayName.length; i++){
+            Map<String, Object> listitem = new HashMap<String, Object>();
+
+            listitem.put("header", headerID[i]);
+            listitem.put("name", arrayName[i]);
+            listTest.add(listitem);
         }
+
+        // 创建SimpleAdapter
+        // Context context	上下文对象
+        //List<? extends Map<String, ?>> data	数据源是含有Map的一个集合
+        //int resource	每一个item的布局文件
+        //String[] from	new String[]{}数组，数组的里面的每一项要与第二个参数中的存入map集合的的key值一样，一一对应
+        //int[] to	new int[]{}数组，数组里面的第三个参数中的item里面的控件id。
+
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listTest, R.layout.list_array,
+                new String[] {"header", "name"}, new int[] {R.id.header, R.id.name});
+
+        // 为listview设置适配器
+        list1.setAdapter(simpleAdapter);
+
     }
-    public void test(View view){
-        String loginName_db;
-        String loginPassword_db;
-        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
-        SQLiteDatabase database=myDBHelper.getReadableDatabase();
-        try{
-           // Cursor cursor=database.query("goods",new String[]{"goodsid","title"},null,null,null,null,null);
-            Cursor cursor=database.rawQuery("select * from user ",null);
-//            while(cursor.moveToNext()){
-//                int index0=cursor.getColumnIndex("username");
-//                loginName_db=cursor.getString(index0);
-//                int index=cursor.getColumnIndex("password");
-//                loginPassword_db=cursor.getString(index);
-//                Log.i("User","--------->username:"+loginName_db+"---password:"+loginPassword_db);
-//            }
-            Log.i("count", String.valueOf(cursor.getCount()));
-            cursor.close();
-        }catch(Exception e){
-        }finally{
-            database.close();
-        }
-    }
-//    public void test(View view ){
-//        UserDao userDao=new UserDao(this,"Shop.db",null,1);
-//        userDao.delete();
-//
-//    }
 }
