@@ -9,7 +9,6 @@ import android.os.Parcelable;
 import android.util.Log;
 
 public class MyDBHelper extends SQLiteOpenHelper {
-//    final String CREATE_TABLE_USER_SQL="create table user (_id integer primary key autoincrement,password text)";
     public MyDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, null, version);
     }
@@ -19,7 +18,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-//        sqLiteDatabase.execSQL(CREATE_TABLE_USER_SQL);
+//           sqLiteDatabase.execSQL(CREATE_TABLE_USER_SQL);
+
         sqLiteDatabase.execSQL("create table user(id integer primary key autoincrement,username text,password text,age text,sex text,phonenumber text,address text)");
         //创建商品列表
         sqLiteDatabase.execSQL("create table goods(goodsid integer primary key autoincrement,title text,introduce text,price text,photo text,type text)");

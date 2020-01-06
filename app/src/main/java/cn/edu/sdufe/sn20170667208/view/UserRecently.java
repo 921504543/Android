@@ -31,6 +31,7 @@ public class UserRecently extends AppCompatActivity {
         RecentlyDao recentlyDao=new RecentlyDao(this);
         List list=recentlyDao.queryOrders();
         List recentlyList=new ArrayList();
+        //list填充数据
         for (int i=0;i<list.size();i++){
             Map map=new HashMap();
             Recently recently=(Recently) list.get(i);
@@ -39,10 +40,13 @@ public class UserRecently extends AppCompatActivity {
             recentlyList.add(map);
 
         }
+        //声明简单适配器
         SimpleAdapter simpleAdapter=new SimpleAdapter(this,recentlyList,R.layout.recently_list_array,new String[]{"img","title"},new int[]{R.id.img,R.id.title});
+
         simpleAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {
             public boolean setViewValue(View v, Object o, String s) {
                 if (v.getId() == R.id.img) {
+                    //网络等图片源的加载
                     ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(UserRecently.this).build();
                     ImageLoader imageLoader = ImageLoader.getInstance();
                     imageLoader.init(config);

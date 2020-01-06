@@ -6,7 +6,7 @@
               xmlns:tools2="http://schemas.android.com/tools" tools:context="com.example.taoshui.view.Taoshui"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical" tools2:ignore="MissingDefaultResource">
+              android:orientation="vertical" >
 
     <TableLayout
             android:layout_width="match_parent"
@@ -188,21 +188,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <Button
-                android:layout_marginLeft="34pt"
-                android:id="@+id/registe_submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:onClick="RegisterSubmit"
-                android:text="提交" />
-        <Button
-                android:id="@+id/registe_return"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Gray"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="返回"
                 android:onClick="returnToNotLogin"
-                android:text="返回" />
+                android:layout_gravity="center"/>
+        <com.xuexiang.xui.widget.button.ButtonView
+                style="@style/ButtonView.Blue"
+                android:text="注册"
+                android:onClick="RegisterSubmit"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="5pt"/>
+
     </LinearLayout>
     <TextView
             android:layout_marginTop="10pt"

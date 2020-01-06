@@ -40,7 +40,7 @@ public class UserLogging extends AppCompatActivity {
         if (username.equals("")||password.equals("")){
             Toast.makeText(UserLogging.this,"用户名或密码不能为空", Toast.LENGTH_SHORT).show();
         }else {
-            //从数据库中按照username 查出password
+            //用username，查出password
             try{
                 Cursor cursor=database.query("user",new String[]{"username","password"},"username=?",new String[]{username},null,null,null);//
 //                database.execSQL("update user set username='fss' where id = 1");
@@ -59,7 +59,7 @@ public class UserLogging extends AppCompatActivity {
             }finally{
                 database.close();
             }
-            //进行用户名，密码比对
+            //对比用户名和密码和数据库中的是不是一样
             if(username.equals(loginName_db)&&password.equals(loginPassword_db)){
                 Intent intent =new Intent(this,UserLogged.class);
                 String content_name=loginName_db;

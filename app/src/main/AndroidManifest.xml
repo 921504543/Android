@@ -29,6 +29,8 @@
         <activity android:name=".view.UserLogged"/>
         <activity android:name=".view.GoodsDetail"/>
         <activity android:name=".view.UserRecently"/>
+        <activity android:name=".view.CarActivity"/>
+        <activity android:name=".view.weatherActivity"/>
 
     </application>
 

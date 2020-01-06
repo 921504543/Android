@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
               android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical" tools:ignore="MissingDefaultResource">
+              android:orientation="vertical" >
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,40 +92,7 @@
             app:sLeftTextString="退出登录"
             app:sRightTextString=">"
     />
-<!--        <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="backIntoLogging"-->
-<!--                android:background="@drawable/top_search_icon"-->
-<!--                android:text="退出登录&ndash;&gt;"-->
-<!--                android:layout_marginBottom="2pt"/>-->
-<!--        <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="toUserInfoShow"-->
-<!--                android:background="@drawable/top_search_icon"-->
-<!--                android:text="我的信息&ndash;&gt;"-->
-<!--                android:layout_marginBottom="2pt"/>-->
-<!--        <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="todayWeather"-->
-<!--                android:background="@drawable/top_search_icon"-->
-<!--                android:text="今日天气&ndash;&gt;"-->
-<!--                android:layout_marginBottom="2pt"/>-->
-<!--        <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="toMyOrder"-->
-<!--                android:background="@drawable/top_search_icon"-->
-<!--                android:text="我的订单&ndash;&gt;"-->
-<!--                android:layout_marginBottom="2pt"/>-->
-<!--        <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="toMyFooter"-->
-<!--                android:background="@drawable/top_search_icon"-->
-<!--                android:text="我的足迹&ndash;&gt;"/>-->
+
     </LinearLayout>
     <LinearLayout
             android:layout_width="wrap_content"
@@ -152,7 +119,7 @@
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="54dp"
-                android:src="@drawable/cart_empty"
+                android:src="@drawable/weather"
                 android:onClick="toWeather"
                 android:layout_weight="0.25" />
         <ImageView

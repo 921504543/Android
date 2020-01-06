@@ -22,10 +22,11 @@
                 >
         </EditText>
         <ImageView
+                android:id="@+id/search"
                 android:layout_width="46dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/top_search_icon"
-                android:onClick="createDB"
+                android:onClick="selectByName"
         >
         </ImageView>
     </LinearLayout>
@@ -151,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/cart_empty"
+                android:src="@drawable/weather"
                 android:onClick="toWeather"
         />
         <ImageView

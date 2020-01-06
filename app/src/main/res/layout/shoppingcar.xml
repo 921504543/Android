@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent" tools:ignore="MissingDefaultResource">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#66B3FF"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="0.3"
+            android:layout_height="50dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/button_layout_1"
+                    android:text="返回"
+                    android:onClick="shoppingcar_back"
+                    android:layout_height="wrap_content">
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:text="购物车"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_layout_1"
+                android:id="@+id/shoppingcar_btn1"
+                android:layout_gravity="right|center_vertical"
+                android:onClick="change"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:orientation="vertical">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:id="@+id/shoppingcar_listview"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="全选"
+                android:textSize="15sp"
+                android:layout_gravity="left|center_vertical"
+                android:onClick="selectAll"
+                android:id="@+id/shoppingcar_chk1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:id="@+id/shoppingcar_textview_sum"
+                android:text="合计：0.00元"
+                android:textSize="15sp"
+                android:layout_gravity="center" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_layout_2"
+                android:text="结算(0)"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:id="@+id/shoppingcar_account"
+                android:onClick="getFinal"
+                android:layout_gravity="right|center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

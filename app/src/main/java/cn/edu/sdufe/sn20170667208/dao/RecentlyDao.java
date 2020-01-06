@@ -17,8 +17,8 @@ public class RecentlyDao {
     }
     //添加足迹
     public void  inertIntoRecently(Recently recently){
-        MyDBHelper myDbOpenHelper=new MyDBHelper(context, "Shop.db", null, 1);
-        SQLiteDatabase sqLiteDatabase=myDbOpenHelper.getWritableDatabase();
+        MyDBHelper myDBHelper=new MyDBHelper(context, "Shop.db", null, 1);
+        SQLiteDatabase sqLiteDatabase=myDBHelper.getWritableDatabase();
         sqLiteDatabase.beginTransaction();
         try{
             ContentValues contentValues=new ContentValues();

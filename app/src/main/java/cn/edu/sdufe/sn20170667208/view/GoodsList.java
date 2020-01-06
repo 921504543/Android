@@ -3,10 +3,7 @@ package cn.edu.sdufe.sn20170667208.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.edu.sdufe.sn20170667208.R;
 import cn.edu.sdufe.sn20170667208.dao.GoodsDao;
@@ -39,7 +36,7 @@ public class GoodsList extends AppCompatActivity {
         List list = goodsDao.queryByType(type);//根据名字得到符合条件的集合
         final List goodsList = new ArrayList();//适配器所加载的数组，由map组成
 
-        //初始化goodsList数组
+        //初始化goodsList数组，将每个商品包装为一个map放到list里面
         for (int i = 0; i < list.size(); i++) {
             Map map = new HashMap();
             Goods goods = (Goods) list.get(i);
@@ -48,8 +45,9 @@ public class GoodsList extends AppCompatActivity {
             map.put("price", goods.getPrice());
             goodsList.add(map);
         }
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this, goodsList, R.layout.goods_list_array, new String[]{"img", "title", "price"}, new int[]{R.id.img, R.id.title, R.id.price});
-        //适配器干扰imageview显示方式
+        //声明一个简单适配器
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this, goodsList, R.layout.goods_list_simple, new String[]{"img", "title", "price"}, new int[]{R.id.img, R.id.title, R.id.price});
+        //读取外网img
         simpleAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {
             public boolean setViewValue(View v, Object o, String s) {
                 if (v.getId() == R.id.img) {
@@ -62,8 +60,9 @@ public class GoodsList extends AppCompatActivity {
                 return false;
             }
         });
+        //将listView加入到简单适配器中
         listView.setAdapter(simpleAdapter);
-        //商品列表跳转到商品详情
+        //商品列表跳转到商品详情，按点击的位置跳转以及传输参数
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -76,11 +75,13 @@ public class GoodsList extends AppCompatActivity {
                 intent.putExtra("title",title);
                 intent.putExtra("price",price);
                 startActivity(intent);
+                //创建recently对象 同时将传给商品详情的数据传到足迹里
                 Recently recently=new Recently(img,price,title);
                 recentlyDao.inertIntoRecently(recently);
             }
         });
     }
+    //跳转
     public void toHome(View view){
         Intent intent=new Intent(this,MainActivity.class);
         startActivity(intent);
@@ -97,4 +98,5 @@ public class GoodsList extends AppCompatActivity {
         Intent intent=new Intent(this,UserNotLogin.class);
         startActivity(intent);
     }
+
 }

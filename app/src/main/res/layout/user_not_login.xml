@@ -53,12 +53,7 @@
                 android:textSize="15dp"
                 android:text="游客登录"
                 app:rb_isRadiusAdjustBounds="true" />
-<!--        <Button-->
-<!--                android:onClick="NotLoginTest"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/button_layout_1"-->
-<!--                android:text="test"/>-->
+
     </LinearLayout>
     <LinearLayout
             android:layout_width="wrap_content"

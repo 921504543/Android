@@ -18,12 +18,12 @@ import com.xuexiang.xui.XUI;
 
 public class UserInfoShow extends AppCompatActivity {
     private Context context;
-    private TextView Info_username;
-    private TextView Info_password;
-    private TextView Info_sex;
-    private TextView Info_age;
-    private TextView Info_phonenumber;
-    private TextView Info_address;
+    private TextView usernameView;
+    private TextView passwordView;
+    private TextView sexView;
+    private TextView ageView;
+    private TextView phoneView;
+    private TextView addressView;
     String loggingName;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -33,22 +33,22 @@ public class UserInfoShow extends AppCompatActivity {
         Intent intent1=getIntent();
         loggingName=intent1.getStringExtra("transform_username");
         System.out.println("ShowUserInfologgingName:" +intent1+"aaaa:"+intent1.getStringExtra("username"));
-        Info_username=(TextView) findViewById(R.id.info_username);
-        Info_password=(TextView) findViewById(R.id.info_password);
-        Info_sex=(TextView) findViewById(R.id.info_sex);
-        Info_age=(TextView) findViewById(R.id.info_age);
-        Info_phonenumber=(TextView) findViewById(R.id.info_phone_number);
-        Info_address=(TextView) findViewById(R.id.info_address);
+        usernameView=(TextView) findViewById(R.id.info_username);
+        passwordView=(TextView) findViewById(R.id.info_password);
+        sexView=(TextView) findViewById(R.id.info_sex);
+        ageView=(TextView) findViewById(R.id.info_age);
+        phoneView=(TextView) findViewById(R.id.info_phone_number);
+        addressView=(TextView) findViewById(R.id.info_address);
         User user=new User();
         UserDao userDao=new UserDao(this,"Shop.db",null,1);
 //        MyDBHelper myDBHelper=new MyDBHelper(this,"Shop.db",null,1);
         userDao.select(user,loggingName);
-        Info_username.setText(user.getName());
-        Info_password.setText(user.getPassword());
-        Info_sex.setText(user.getSex());
-        Info_age.setText(user.getAge());
-        Info_phonenumber.setText(user.getTelphone());
-        Info_address.setText(user.getAddress());
+        usernameView.setText(user.getName());
+        passwordView.setText(user.getPassword());
+        sexView.setText(user.getSex());
+        ageView.setText(user.getAge());
+        phoneView.setText(user.getTelphone());
+        addressView.setText(user.getAddress());
     }
 
     public void toUserInfoChange(View view){
